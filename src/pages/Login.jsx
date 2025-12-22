@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function SignUp() {
+function Login() {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
-    schoolName: '',
     email: '',
     password: '',
-    confirmPassword: '',
     keepLoggedIn: false
   })
 
@@ -25,7 +23,7 @@ function SignUp() {
     e.preventDefault()
     
     // Check if password matches hardcoded password
-    if (formData.password === HARDCODED_PASSWORD && formData.confirmPassword === HARDCODED_PASSWORD) {
+    if (formData.password === HARDCODED_PASSWORD) {
       // Redirect to dashboard
       navigate('/dashboard')
     } else {
@@ -36,7 +34,7 @@ function SignUp() {
   return (
     <div className="h-screen flex overflow-hidden bg-gray-50">
       {/* Left Section - Image */}
-      <div className="hidden lg:flex lg:w-3/6 relative bg-gray-50  h-full">
+      <div className="hidden lg:flex lg:w-3/6 relative bg-gray-50 h-full">
         <img 
           src="/images/linkedsignup.png" 
           alt="Family using laptop" 
@@ -44,7 +42,7 @@ function SignUp() {
         />
       </div>
 
-      {/* Right Section - Sign Up Form */}
+      {/* Right Section - Login Form */}
       <div className="w-full lg:w-3/6 flex flex-col bg-gray-50 overflow-hidden">
         {/* Header - Full Width */}
         <div className="w-full text-center mt-10 relative py-16" style={{ backgroundColor: '#f5f5f5' }}>
@@ -70,7 +68,7 @@ function SignUp() {
                 lineHeight: '30px'
               }}
             >
-              Sign Up Your School
+              Welcome Back to LinkED School Portal
             </h1>
             <p 
               className="text-center mx-auto"
@@ -84,7 +82,7 @@ function SignUp() {
                 width: '400px'
               }}
             >
-              Create your school account to start managing safeguarding alerts, parent engagement, and reports - all in one secure platform.
+              Log in to manage your school's safeguarding alerts, parent engagement, and reports.
             </p>
           </div>
         </div>
@@ -95,22 +93,6 @@ function SignUp() {
             {/* Form Card */}
             <div className="rounded-lg shadow-lg p-6" style={{ backgroundColor: '#fefefe' }}>
             <form onSubmit={handleSubmit} className="space-y-3">
-            {/* School Name */}
-            <div>
-              <label htmlFor="schoolName" className="block text-sm font-medium text-gray-700 mb-1">
-                School Name
-              </label>
-              <input
-                type="text"
-                id="schoolName"
-                name="schoolName"
-                value={formData.schoolName}
-                onChange={handleChange}
-                placeholder="Value"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
             {/* Official School Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
@@ -137,10 +119,10 @@ function SignUp() {
               </div>
             </div>
 
-            {/* Create Password */}
+            {/* Password */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
-                Create Password
+                Password
               </label>
               <input
                 type="password"
@@ -153,38 +135,27 @@ function SignUp() {
               />
             </div>
 
-            {/* Confirm Password */}
-            <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">
-                Confirm Password
-              </label>
-              <input
-                type="password"
-                id="confirmPassword"
-                name="confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                placeholder="************"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
+            {/* Keep me logged in checkbox and Forgot Password */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  id="keepLoggedIn"
+                  name="keepLoggedIn"
+                  checked={formData.keepLoggedIn}
+                  onChange={handleChange}
+                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                />
+                <label htmlFor="keepLoggedIn" className="ml-2 text-sm text-gray-700">
+                  Keep me logged in
+                </label>
+              </div>
+              <a href="#" onClick={(e) => { e.preventDefault(); navigate('/forgot-password') }} className="text-sm text-blue-600 hover:text-blue-700 font-medium">
+                Forgot Password?
+              </a>
             </div>
 
-            {/* Keep me logged in checkbox */}
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="keepLoggedIn"
-                name="keepLoggedIn"
-                checked={formData.keepLoggedIn}
-                onChange={handleChange}
-                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-              />
-              <label htmlFor="keepLoggedIn" className="ml-2 text-sm text-gray-700">
-                Keep me logged in
-              </label>
-            </div>
-
-            {/* Create Account Button */}
+            {/* Log In Button */}
             <button
               type="submit"
               className="w-full text-white font-semibold py-2 px-4 transition-colors duration-200"
@@ -193,20 +164,20 @@ function SignUp() {
                 backgroundColor: '#173570'
               }}
             >
-              Create Account
+              Log In
             </button>
 
-            {/* Login Link */}
+            {/* Sign Up Link */}
             <div className="text-center mt-2">
               <p className="text-sm text-gray-600">
-                Already have an account?{' '}
-                <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
-                  Log In
+                Don't have an account?{' '}
+                <a href="#" onClick={(e) => { e.preventDefault(); navigate('/') }} className="text-blue-600 hover:text-blue-700 font-medium">
+                  Sign Up Your School
                 </a>
               </p>
             </div>
             </form>
-            </div>
+          </div>
           </div>
         </div>
       </div>
@@ -214,5 +185,5 @@ function SignUp() {
   )
 }
 
-export default SignUp
+export default Login
 
