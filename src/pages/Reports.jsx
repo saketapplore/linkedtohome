@@ -15,6 +15,16 @@ function Reports() {
     const [activeNav, setActiveNav] = useState('Reports')
     const [timeRange, setTimeRange] = useState('Last 30 days')
     const [graphTimeRange, setGraphTimeRange] = useState('This week')
+    const [showReportForm, setShowReportForm] = useState(false)
+    const [reportForm, setReportForm] = useState({
+        title: '',
+        range: 'Last 30 days',
+        includeSections: {
+            engagement: true,
+            safeguarding: true,
+            staff: true
+        }
+    })
 
     // Sample data for Engagement Over Time graph
     const engagementData = [
@@ -83,7 +93,9 @@ function Reports() {
                                     </div>
                                 </div>
                                 {/* Generate Report Button */}
-                                <button className="px-4 py-2 bg-[#173570] text-white rounded-lg text-sm font-medium hover:bg-[#1a3d7a] transition-colors">
+                                <button
+                                    onClick={() => setShowReportForm(true)}
+                                    className="px-4 py-2 bg-[#173570] text-white rounded-lg text-sm font-medium hover:bg-[#1a3d7a] transition-colors">
                                     Generate Report
                                 </button>
                             </div>
@@ -581,7 +593,91 @@ function Reports() {
 
                 </section>
 
+                {/* Generate Report Form Modal */}
+                {showReportForm && (
+                    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/40 p-4">
+                        <div className="w-full max-w-xl rounded-xl bg-white shadow-2xl">
+                            <div className="flex items-center justify-between border-b px-6 py-4">
+                                <h3 className="text-lg font-semibold text-gray-900">Generate Report</h3>
+                                <button
+                                    onClick={() => setShowReportForm(false)}
+                                    className="text-gray-500 hover:text-gray-700">
+                                    ✕
+                                </button>
+                            </div>
 
+                            <form
+                                onSubmit={(e) => {
+                                    e.preventDefault()
+                                    setShowReportForm(false)
+                                }}
+                                className="space-y-4 px-6 py-5">
+                                <div className="flex flex-col gap-2">
+                                    <label className="text-sm font-medium text-gray-700">Report title</label>
+                                    <input
+                                        required
+                                        value={reportForm.title}
+                                        onChange={(e) => setReportForm((prev) => ({...prev, title: e.target.value}))}
+                                        placeholder="e.g. Engagement overview"
+                                        className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#173570] focus:outline-none focus:ring-2 focus:ring-[#173570]/30"/>
+                                </div>
+
+                                <div className="flex flex-col gap-2">
+                                    <label className="text-sm font-medium text-gray-700">Date range</label>
+                                    <select
+                                        value={reportForm.range}
+                                        onChange={(e) => setReportForm((prev) => ({...prev, range: e.target.value}))}
+                                        className="w-full appearance-none rounded-lg border border-gray-300 bg-white px-3 py-2 pr-8 text-sm text-gray-900 focus:border-[#173570] focus:outline-none focus:ring-2 focus:ring-[#173570]/30">
+                                        <option value="Last 7 days">Last 7 days</option>
+                                        <option value="Last 30 days">Last 30 days</option>
+                                        <option value="Last 90 days">Last 90 days</option>
+                                        <option value="Last year">Last year</option>
+                                    </select>
+                                </div>
+
+                                <div className="flex flex-col gap-3">
+                                    <p className="text-sm font-medium text-gray-700">Include sections</p>
+                                    {[
+                                        {key: 'engagement', label: 'Engagement Overview'},
+                                        {key: 'safeguarding', label: 'Safeguarding Insights'},
+                                        {key: 'staff', label: 'Staff Activity'}
+                                    ].map((item) => (
+                                        <label key={item.key} className="flex items-center gap-3 text-sm text-gray-800">
+                                            <input
+                                                type="checkbox"
+                                                checked={reportForm.includeSections[item.key]}
+                                                onChange={(e) =>
+                                                    setReportForm((prev) => ({
+                                                        ...prev,
+                                                        includeSections: {
+                                                            ...prev.includeSections,
+                                                            [item.key]: e.target.checked
+                                                        }
+                                                    }))
+                                                }
+                                                className="h-4 w-4 rounded border-gray-300 text-[#173570] focus:ring-[#173570]"/>
+                                            {item.label}
+                                        </label>
+                                    ))}
+                                </div>
+
+                                <div className="flex items-center justify-end gap-3 pt-2">
+                                    <button
+                                        type="button"
+                                        onClick={() => setShowReportForm(false)}
+                                        className="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                        Cancel
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        className="rounded-lg bg-[#173570] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1a3d7a]">
+                                        Generate
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     )
