@@ -306,16 +306,16 @@ function LetsStartup() {
 
               {/* Save & Continue Button */}
               <div className="flex justify-center">
-                <button
-                  type="submit"
+              <button
+                type="submit"
                   className="w-[300px] text-white font-semibold py-2 px-4 transition-colors duration-200"
-                  style={{
-                    borderRadius: '6px',
-                    backgroundColor: '#173570'
-                  }}
-                >
-                  Save & Continue
-                </button>
+                style={{
+                  borderRadius: '6px',
+                  backgroundColor: '#173570'
+                }}
+              >
+                Save & Continue
+              </button>
               </div>
             </form>
             </div>

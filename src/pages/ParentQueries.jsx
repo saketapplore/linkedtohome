@@ -138,6 +138,15 @@ function ParentQueries() {
     }
   }
 
+  const modalLabelStyle = {
+    color: '#000',
+    fontFamily: 'Lato',
+    fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: 500,
+    lineHeight: 'normal'
+  }
+
   return (
     <div className="h-screen flex overflow-hidden bg-gray-50">
       <Sidebar activeNav={activeNav} setActiveNav={setActiveNav} />
@@ -403,7 +412,7 @@ function ParentQueries() {
               <form className="p-6 space-y-4">
                 {/* Query Type */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Query Type</label>
+                  <label className="block mb-1" style={modalLabelStyle}>Query Type</label>
                   <input
                     type="text"
                     value={selectedQuery.queryText}
@@ -414,7 +423,7 @@ function ParentQueries() {
 
                 {/* Child Linked */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Child Linked</label>
+                  <label className="block mb-1" style={modalLabelStyle}>Child Linked</label>
                   <input
                     type="text"
                     value={selectedQuery.childLinked}
@@ -425,7 +434,7 @@ function ParentQueries() {
 
                 {/* Year Group */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Year Group</label>
+                  <label className="block mb-1" style={modalLabelStyle}>Year Group</label>
                   <input
                     type="text"
                     value={selectedQuery.yearGroup}
@@ -436,7 +445,7 @@ function ParentQueries() {
 
                 {/* School Response */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">School Response</label>
+                  <label className="block mb-1" style={modalLabelStyle}>School Response</label>
                   <textarea
                     value={schoolResponse}
                     onChange={(e) => setSchoolResponse(e.target.value)}

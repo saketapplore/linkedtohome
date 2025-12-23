@@ -95,6 +95,24 @@ function SafeguardingAlerts() {
     { id: 3, title: 'Bullying Incident', yearGroup: 'Year 8', scheduledDate: '2025-09-23' }
   ]
 
+  const tableHeaderStyle = {
+    color: 'var(--deep-blue, #003049)',
+    fontFamily: 'Lato',
+    fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: 600,
+    lineHeight: 'normal'
+  }
+
+  const alertLabelStyle = {
+    color: '#000',
+    fontFamily: 'Lato',
+    fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: 500,
+    lineHeight: 'normal'
+  }
+
   return (
     <div className="h-screen flex overflow-hidden bg-gray-50">
       <Sidebar activeNav={activeNav} setActiveNav={setActiveNav} />
@@ -244,12 +262,12 @@ function SafeguardingAlerts() {
                 {/* Table Header */}
                 <thead>
                   <tr style={{ backgroundColor: '#B1EFE3' }}>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">Alert Title</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">Year Group</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">Date Sent</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">Viewed %</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">Status</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">Action</th>
+                    <th className="px-4 py-3 text-left" style={tableHeaderStyle}>Alert Title</th>
+                    <th className="px-4 py-3 text-left" style={tableHeaderStyle}>Year Group</th>
+                    <th className="px-4 py-3 text-left" style={tableHeaderStyle}>Date Sent</th>
+                    <th className="px-4 py-3 text-left" style={tableHeaderStyle}>Viewed %</th>
+                    <th className="px-4 py-3 text-left" style={tableHeaderStyle}>Status</th>
+                    <th className="px-4 py-3 text-left" style={tableHeaderStyle}>Action</th>
                   </tr>
                 </thead>
                 {/* Table Body */}
@@ -301,8 +319,8 @@ function SafeguardingAlerts() {
             </div>
 
             {/* View More Link */}
-            <div className="p-6 pt-4 text-center">
-              <button className="text-[#173570] hover:text-[#1a3d7a] font-medium text-sm">
+            <div className="p-6 pt-4 text-center border-t border-gray-200">
+              <button className="text-[#173570]  hover:text-[#1a3d7a] font-medium text-sm">
                 View More
               </button>
             </div>
@@ -381,10 +399,10 @@ function SafeguardingAlerts() {
                 {/* Table Header */}
                 <thead>
                   <tr style={{ backgroundColor: '#B1EFE3' }}>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">Alert Title</th>
-                    <th className="px-4 py-3 text-center text-sm font-semibold text-gray-900">Year Group</th>
-                    <th className="px-4 py-3 text-center text-sm font-semibold text-gray-900">Scheduled Date</th>
-                    <th className="px-4 py-3 text-right text-sm font-semibold text-gray-900">Action</th>
+                    <th className="px-4 py-3 text-left" style={tableHeaderStyle}>Alert Title</th>
+                    <th className="px-4 py-3 text-center" style={tableHeaderStyle}>Year Group</th>
+                    <th className="px-4 py-3 text-center" style={tableHeaderStyle}>Scheduled Date</th>
+                    <th className="px-4 py-3 text-center" style={tableHeaderStyle}>Action</th>
                   </tr>
                 </thead>
                 {/* Table Body */}
@@ -395,7 +413,7 @@ function SafeguardingAlerts() {
                       <td className="px-4 py-4 text-sm text-gray-900 text-center">{alert.yearGroup}</td>
                       <td className="px-4 py-4 text-sm text-gray-900 text-center">{alert.scheduledDate}</td>
                       <td className="px-4 py-4 text-right">
-                        <div className="flex items-center justify-end gap-3">
+                        <div className="flex gap-10 items-center justify-center">
                           {/* Preview Button */}
                           <button className="flex items-center gap-1 text-[#173570] hover:text-[#1a3d7a] font-medium text-sm">
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -420,7 +438,7 @@ function SafeguardingAlerts() {
             </div>
 
             {/* View More Link */}
-            <div className="p-6 pt-4 text-center">
+            <div className="p-6 pt-4 text-center border-t border-gray-200">
               <button className="text-[#173570] hover:text-[#1a3d7a] font-medium text-sm">
                 View More
               </button>
@@ -460,7 +478,7 @@ function SafeguardingAlerts() {
               <form onSubmit={handleCreateAlert} className="p-6 space-y-4">
                 {/* Alert Title */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Alert Title</label>
+                  <label className="block mb-1" style={alertLabelStyle}>Alert Title</label>
                   <input
                     type="text"
                     name="alertTitle"
@@ -473,7 +491,7 @@ function SafeguardingAlerts() {
 
                 {/* Applicable Year Group(s) */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Applicable Year Group(s)*</label>
+                  <label className="block mb-1" style={alertLabelStyle}>Applicable Year Group(s)*</label>
                   <div className="relative">
                     <select
                       name="applicableYearGroups"
@@ -498,7 +516,7 @@ function SafeguardingAlerts() {
 
                 {/* Select parent */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Select parent</label>
+                  <label className="block mb-1" style={alertLabelStyle}>Select parent</label>
                   <div className="relative">
                     <select
                       name="selectParent"
@@ -523,7 +541,7 @@ function SafeguardingAlerts() {
 
                 {/* What We're Seeing in School */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">What We're Seeing in School</label>
+                  <label className="block mb-1" style={alertLabelStyle}>What We're Seeing in School</label>
                   <textarea
                     name="whatWereSeeing"
                     value={alertFormData.whatWereSeeing}
@@ -536,7 +554,7 @@ function SafeguardingAlerts() {
 
                 {/* What We're Doing in School */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">What We're Doing in School</label>
+                  <label className="block mb-1" style={alertLabelStyle}>What We're Doing in School</label>
                   <textarea
                     name="whatWereDoing"
                     value={alertFormData.whatWereDoing}
@@ -549,7 +567,7 @@ function SafeguardingAlerts() {
 
                 {/* How You Can Help at Home */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">How You Can Help at Home</label>
+                  <label className="block mb-1" style={alertLabelStyle}>How You Can Help at Home</label>
                   <textarea
                     name="howYouCanHelp"
                     value={alertFormData.howYouCanHelp}
@@ -562,7 +580,7 @@ function SafeguardingAlerts() {
 
                 {/* Add Helpful Resources */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Add Helpful Resources</label>
+                  <label className="block mb-1" style={alertLabelStyle}>Add Helpful Resources</label>
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-[#173570] transition-colors cursor-pointer">
                     <input
                       type="file"

@@ -56,7 +56,7 @@ function EmployeeProfile() {
                 <div className="flex items-center gap-3">
                   <span 
                     className="inline-flex px-3 py-1 text-xs font-medium rounded-full"
-                    style={{ backgroundColor: '#4FC3F7', color: '#fff' }}
+                    style={{ backgroundColor: '#08A0AF', color: '#fff' }}
                   >
                     Active
                   </span>
@@ -89,10 +89,10 @@ function EmployeeProfile() {
                 <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">Profile Information</h2>
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-white font-semibold text-lg flex-shrink-0" style={{ backgroundColor: '#FFAB91' }}>
+                    <div className="w-14 h-14 rounded-full flex items-center justify-center text-white font-semibold text-lg flex-shrink-0" style={{ backgroundColor: '#FFAB91' }}>
                       EC
                     </div>
-                    <div className="flex-1 grid grid-cols-2 gap-x-6 gap-y-3">
+                    <div className="flex-1 space-y-3">
                       <div>
                         <div className="text-xs text-gray-500 mb-1">Name</div>
                         <div className="text-sm font-semibold text-gray-900">Emma Carter</div>

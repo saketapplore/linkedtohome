@@ -50,8 +50,20 @@ function Dashboard() {
           <div className="p-6">
             {/* Greeting Section */}
             <section className="mb-4">
-              <h1 className="text-2xl font-bold text-gray-900 mb-2">Good Morning, Oakwood High School 👋</h1>
-              <p className="text-sm text-gray-600">
+              <h1
+                className="mb-2"
+                style={{
+                  color: 'var(--deep-blue, #003049)',
+                  fontFamily: 'Lato',
+                  fontSize: '24px',
+                  fontStyle: 'normal',
+                  fontWeight: 600,
+                  lineHeight: '30px'
+                }}
+              >
+                Good Morning, Oakwood High School 👋
+              </h1>
+              <p className="text-sm text-[#827E7E]">
                 Here's a snapshot of your school's engagement and safeguarding updates.
               </p>
             </section>

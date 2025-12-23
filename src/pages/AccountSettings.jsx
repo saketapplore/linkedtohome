@@ -42,7 +42,7 @@ function AccountSettings() {
                             {/* <span className="text-sm text-gray-600">Account Settings / Account</span> */} </div>
 
                         {/* Page Title */}
-                        <h1 className="text-2xl font-bold text-gray-900 mb-6">Account Settings / Account</h1>
+                        <h1 className="text-2xl font-light text-gray-500 mb-6">Account Settings / Account</h1>
 
                         {/* Tabs */}
                         <div className="flex space-x-1 mb-6">
@@ -240,7 +240,7 @@ function AccountSettings() {
                                 </div>
 
                                 {/* Action Buttons */}
-                                <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                                <div className="flex items-center gap-3 pt-4">
                                     <button type="submit" className="px-6 py-2 bg-[#173570] text-white rounded-lg text-sm font-medium hover:bg-[#1a3d7a] transition-colors">
                                         Save Changes
                                     </button>
@@ -253,13 +253,12 @@ function AccountSettings() {
 
                         {/* Delete Account Section */}
                         <section className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mt-6">
-                            <h2 className="text-lg font-semibold text-gray-900 mb-4">Delete Account</h2>
+                            <h2 className="text-lg font-semibold text-gray-500 mb-4">Delete Account</h2>
                             
                             {/* Warning Message */}
-                            <div className="bg-[#FFE7E0] rounded-lg p-4 mb-4">
-                                <p className="text-sm text-gray-900">
-                                    Are you sure you want to delete your account? Once you delete your account, there is no going back. Please be certain.
-                                </p>
+                            <div className="rounded-lg p-4 mb-4" style={{ backgroundColor: 'var(--peach, #FFCCBC)' }}>
+                                <p className="text-sm text-gray-900 font-semibold">Are you sure you want to delete your account?</p>
+                                <p className="text-sm text-gray-900">Once you delete your account, there is no going back. Please be certain.</p>
                             </div>
 
                             {/* Confirmation Checkbox */}
@@ -269,7 +268,7 @@ function AccountSettings() {
                                     id="confirmDeactivation"
                                     className="w-4 h-4 text-[#173570] border-gray-300 rounded focus:ring-[#173570]"
                                 />
-                                <label htmlFor="confirmDeactivation" className="text-sm text-gray-700">
+                                <label htmlFor="confirmDeactivation" className="text-sm text-gray-00">
                                     I confirm my account deactivation
                                 </label>
                             </div>
@@ -277,7 +276,7 @@ function AccountSettings() {
                             {/* Deactivate Button */}
                             <button
                                 type="button"
-                                className="px-6 py-2 bg-[#FFAB91] text-white rounded-lg text-sm font-medium hover:bg-[#FF8A65] transition-colors"
+                                className="px-6 py-2 bg-[#EA5455] text-white rounded-lg text-sm font-medium hover:bg-[#FF8A65] transition-colors"
                             >
                                 Deactivate Account
                             </button>
@@ -291,25 +290,25 @@ function AccountSettings() {
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                                     {/* Left: Current Plan */}
                                     <div>
-                                        <h2 className="text-lg font-semibold text-gray-900 mb-4">Current Plan</h2>
+                                        <h2 className="text-lg font-semibold text-gray-500 mb-4">Current Plan</h2>
                                         <div className="space-y-4">
                                             <div>
                                                 <p className="text-lg font-semibold text-[#173570] mb-1">Your Current Plan is Basic</p>
-                                                <p className="text-sm text-gray-600">A simple start for everyone</p>
+                                                <p className="text-sm text-gray-500">A simple start for everyone</p>
                                             </div>
                                             <div>
-                                                <p className="text-sm font-medium text-gray-900 mb-1">Active until Dec 09, 2021</p>
-                                                <p className="text-xs text-gray-600">We will send you a notification upon Subscription expiration</p>
+                                                <p className="text-sm font-semibold text-[#173570] mb-1">Active until Dec 09, 2021</p>
+                                                <p className="text-sm text-gray-500">We will send you a notification upon Subscription expiration</p>
                                             </div>
                                             <div className="flex items-baseline gap-2">
-                                                <span className="text-2xl font-bold text-gray-900">£199</span>
+                                                <span className="text-xl font-semibold text-[#173570] mb-1">£199</span>
                                                 <span className="text-sm text-gray-600">Per Month</span>
                                                 <span className="ml-2 px-2 py-1 bg-[#FFAB91] text-white text-xs font-medium rounded">Popular</span>
                                             </div>
-                                            <p className="text-sm text-gray-600">Standard plan for small to medium businesses</p>
+                                            <p className="text-sm text-gray-400">Standard plan for small to medium businesses</p>
                                             
                                             {/* Action Buttons */}
-                                            <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                                            <div className="flex items-center gap-3 pt-4">
                                                 <button
                                                     type="button"
                                                     className="px-6 py-2 bg-[#173570] text-white rounded-lg text-sm font-medium hover:bg-[#1a3d7a] transition-colors"
@@ -329,21 +328,24 @@ function AccountSettings() {
                                     {/* Right: Attention and Days Remaining */}
                                     <div>
                                         {/* Warning Box */}
-                                        <div className="bg-[#FFE7E0] rounded-lg p-4 mb-6">
+                                        <div className="bg-[#FFCCBC] rounded-lg p-4 mb-6">
                                             <p className="text-sm font-semibold text-gray-900 mb-1">We need your attention!</p>
                                             <p className="text-sm text-gray-900">Your plan requires update</p>
                                         </div>
 
                                         {/* Days Remaining */}
                                         <div>
-                                            <label className="block text-sm font-medium text-gray-900 mb-2">Days</label>
+                                            <div className="flex justify-between flex-row"> 
+                                            <span className="block text-sm font-medium text-gray-900 mb-2">Days</span>
+                                            <span className="text-xs font-semibold text-[#003049]">24 of 30 Days</span>
+                                            </div>
                                             <div className="mb-2">
                                                 <div className="w-full bg-gray-200 rounded-full h-4 relative">
                                                     <div 
                                                         className="h-4 rounded-full flex items-center justify-end pr-2"
                                                         style={{ width: '80%', backgroundColor: '#08A0AF' }}
                                                     >
-                                                        <span className="text-xs font-semibold text-white">24 of 30 Days</span>
+
                                                     </div>
                                                 </div>
                                             </div>

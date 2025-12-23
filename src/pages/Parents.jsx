@@ -262,9 +262,35 @@ function Parents() {
 
               {/* Modal Body */}
               <form onSubmit={handleAddParent} className="p-6 space-y-4">
+                {/*
+                  Label style: Body 16 med
+                  color: #000;
+                  font-family: Lato;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: normal;
+                */}
+                {/** Shared label style for all field headings in this form */}
+                {/*
+                  NOTE: Using inline style object defined before return would be cleaner,
+                  but keeping it inline here for minimal change scope.
+                */}
                 {/* Parent Name */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Parent Name</label>
+                  <label
+                    className="block mb-1"
+                    style={{
+                      color: '#000',
+                      fontFamily: 'Lato',
+                      fontSize: '16px',
+                      fontStyle: 'normal',
+                      fontWeight: 500,
+                      lineHeight: 'normal'
+                    }}
+                  >
+                    Parent Name
+                  </label>
                   <input
                     type="text"
                     name="parentName"
@@ -276,7 +302,19 @@ function Parents() {
 
                 {/* Email Address */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                  <label
+                    className="block mb-1"
+                    style={{
+                      color: '#000',
+                      fontFamily: 'Lato',
+                      fontSize: '16px',
+                      fontStyle: 'normal',
+                      fontWeight: 500,
+                      lineHeight: 'normal'
+                    }}
+                  >
+                    Email Address
+                  </label>
                   <input
                     type="email"
                     name="email"
@@ -288,7 +326,19 @@ function Parents() {
 
                 {/* Contact Number */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Contact Number</label>
+                  <label
+                    className="block mb-1"
+                    style={{
+                      color: '#000',
+                      fontFamily: 'Lato',
+                      fontSize: '16px',
+                      fontStyle: 'normal',
+                      fontWeight: 500,
+                      lineHeight: 'normal'
+                    }}
+                  >
+                    Contact Number
+                  </label>
                   <input
                     type="tel"
                     name="contactNumber"
@@ -300,7 +350,19 @@ function Parents() {
 
                 {/* Address */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Address</label>
+                  <label
+                    className="block mb-1"
+                    style={{
+                      color: '#000',
+                      fontFamily: 'Lato',
+                      fontSize: '16px',
+                      fontStyle: 'normal',
+                      fontWeight: 500,
+                      lineHeight: 'normal'
+                    }}
+                  >
+                    Address
+                  </label>
                   <input
                     type="text"
                     name="address"
@@ -312,7 +374,19 @@ function Parents() {
 
                 {/* Relationship to Child */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Relationship to Child</label>
+                  <label
+                    className="block mb-1"
+                    style={{
+                      color: '#000',
+                      fontFamily: 'Lato',
+                      fontSize: '16px',
+                      fontStyle: 'normal',
+                      fontWeight: 500,
+                      lineHeight: 'normal'
+                    }}
+                  >
+                    Relationship to Child
+                  </label>
                   <div className="relative">
                     <select
                       name="relationship"
@@ -335,7 +409,19 @@ function Parents() {
 
                 {/* Child Name */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Child Name</label>
+                  <label
+                    className="block mb-1"
+                    style={{
+                      color: '#000',
+                      fontFamily: 'Lato',
+                      fontSize: '16px',
+                      fontStyle: 'normal',
+                      fontWeight: 500,
+                      lineHeight: 'normal'
+                    }}
+                  >
+                    Child Name
+                  </label>
                   <input
                     type="text"
                     name="childName"
@@ -347,7 +433,19 @@ function Parents() {
 
                 {/* Year Group */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Year Group</label>
+                  <label
+                    className="block mb-1"
+                    style={{
+                      color: '#000',
+                      fontFamily: 'Lato',
+                      fontSize: '16px',
+                      fontStyle: 'normal',
+                      fontWeight: 500,
+                      lineHeight: 'normal'
+                    }}
+                  >
+                    Year Group
+                  </label>
                   <div className="relative">
                     <select
                       name="yearGroup"

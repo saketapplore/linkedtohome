@@ -505,13 +505,13 @@ function Reports() {
                                     <table className="w-full">
                                         <thead>
                                             <tr style={{ backgroundColor: '#B1EFE3' }}>
-                                                <th className="text-left py-3 px-2 text-sm font-medium text-gray-700">S.no.</th>
-                                                <th className="text-left py-3 px-2 text-sm font-medium text-gray-700">Employee Name</th>
-                                                <th className="text-left py-3 px-2 text-sm font-medium text-gray-700">Email</th>
-                                                <th className="text-left py-3 px-2 text-sm font-medium text-gray-700">Role</th>
-                                                <th className="text-left py-3 px-2 text-sm font-medium text-gray-700">Access Level</th>
-                                                <th className="text-left py-3 px-2 text-sm font-medium text-gray-700">Status</th>
-                                                <th className="text-left py-3 px-2 text-sm font-medium text-gray-700">Action</th>
+                                                <th className="text-left py-3 px-2" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Lato', fontSize: '16px', fontStyle: 'normal', fontWeight: 600, lineHeight: 'normal' }}>S.no.</th>
+                                                <th className="text-left py-3 px-2" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Lato', fontSize: '16px', fontStyle: 'normal', fontWeight: 600, lineHeight: 'normal' }}>Employee Name</th>
+                                                <th className="text-left py-3 px-2" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Lato', fontSize: '16px', fontStyle: 'normal', fontWeight: 600, lineHeight: 'normal' }}>Email</th>
+                                                <th className="text-left py-3 px-2" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Lato', fontSize: '16px', fontStyle: 'normal', fontWeight: 600, lineHeight: 'normal' }}>Role</th>
+                                                <th className="text-left py-3 px-2" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Lato', fontSize: '16px', fontStyle: 'normal', fontWeight: 600, lineHeight: 'normal' }}>Access Level</th>
+                                                <th className="text-left py-3 px-2" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Lato', fontSize: '16px', fontStyle: 'normal', fontWeight: 600, lineHeight: 'normal' }}>Status</th>
+                                                <th className="text-left py-3 px-2" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Lato', fontSize: '16px', fontStyle: 'normal', fontWeight: 600, lineHeight: 'normal' }}>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>

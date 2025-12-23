@@ -74,6 +74,15 @@ function EmployeeManagement() {
     { id: 8, name: 'Emma Carter', email: 'emma.carter@example.com', role: 'Counsellor', accessLevel: 'Full', status: 'Lorem' }
   ]
 
+  const modalLabelStyle = {
+    color: '#000',
+    fontFamily: 'Lato',
+    fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: 500,
+    lineHeight: 'normal'
+  }
+
   return (
     <div className="h-screen flex overflow-hidden bg-gray-50">
       <Sidebar activeNav={activeNav} setActiveNav={setActiveNav} />
@@ -215,13 +224,62 @@ function EmployeeManagement() {
                 <table className="w-full">
                   <thead>
                     <tr style={{ backgroundColor: '#B1EFE3' }}>
-                      <th className="text-left py-3 px-4 text-sm font-medium text-gray-700">S.no.</th>
-                      <th className="text-left py-3 px-4 text-sm font-medium text-gray-700">Employee Name</th>
-                      <th className="text-left py-3 px-4 text-sm font-medium text-gray-700">Email</th>
-                      <th className="text-left py-3 px-4 text-sm font-medium text-gray-700">Role</th>
-                      <th className="text-left py-3 px-4 text-sm font-medium text-gray-700">Access Level</th>
-                      <th className="text-left py-3 px-4 text-sm font-medium text-gray-700">Status</th>
-                      <th className="text-left py-3 px-4 text-sm font-medium text-gray-700">Action</th>
+                      <th className="text-left py-3 px-4" style={{
+                        color: 'var(--deep-blue, #003049)',
+                        fontFamily: 'Lato',
+                        fontSize: '16px',
+                        fontStyle: 'normal',
+                        fontWeight: 600,
+                        lineHeight: 'normal'
+                      }}>S.no.</th>
+                      <th className="text-left py-3 px-4" style={{
+                        color: 'var(--deep-blue, #003049)',
+                        fontFamily: 'Lato',
+                        fontSize: '16px',
+                        fontStyle: 'normal',
+                        fontWeight: 600,
+                        lineHeight: 'normal'
+                      }}>Employee Name</th>
+                      <th className="text-left py-3 px-4" style={{
+                        color: 'var(--deep-blue, #003049)',
+                        fontFamily: 'Lato',
+                        fontSize: '16px',
+                        fontStyle: 'normal',
+                        fontWeight: 600,
+                        lineHeight: 'normal'
+                      }}>Email</th>
+                      <th className="text-left py-3 px-4" style={{
+                        color: 'var(--deep-blue, #003049)',
+                        fontFamily: 'Lato',
+                        fontSize: '16px',
+                        fontStyle: 'normal',
+                        fontWeight: 600,
+                        lineHeight: 'normal'
+                      }}>Role</th>
+                      <th className="text-left py-3 px-4" style={{
+                        color: 'var(--deep-blue, #003049)',
+                        fontFamily: 'Lato',
+                        fontSize: '16px',
+                        fontStyle: 'normal',
+                        fontWeight: 600,
+                        lineHeight: 'normal'
+                      }}>Access Level</th>
+                      <th className="text-left py-3 px-4" style={{
+                        color: 'var(--deep-blue, #003049)',
+                        fontFamily: 'Lato',
+                        fontSize: '16px',
+                        fontStyle: 'normal',
+                        fontWeight: 600,
+                        lineHeight: 'normal'
+                      }}>Status</th>
+                      <th className="text-left py-3 px-4" style={{
+                        color: 'var(--deep-blue, #003049)',
+                        fontFamily: 'Lato',
+                        fontSize: '16px',
+                        fontStyle: 'normal',
+                        fontWeight: 600,
+                        lineHeight: 'normal'
+                      }}>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -244,8 +302,8 @@ function EmployeeManagement() {
                               onClick={() => toggleDropdown(`action-${employee.id}`)}
                               className="p-1 hover:bg-gray-100 rounded"
                             >
-                              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                              <svg className="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6 12a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0Zm7.5 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0Zm7.5 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0Z" />
                               </svg>
                             </button>
                             {openDropdown === `action-${employee.id}` && (
@@ -340,7 +398,7 @@ function EmployeeManagement() {
               <form onSubmit={handleAddEmployee} className="p-6 space-y-4">
                 {/* Employee Name */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Employee Name</label>
+                  <label className="block mb-1" style={modalLabelStyle}>Employee Name</label>
                   <input
                     type="text"
                     name="employeeName"
@@ -352,7 +410,7 @@ function EmployeeManagement() {
 
                 {/* Email Address */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                  <label className="block mb-1" style={modalLabelStyle}>Email Address</label>
                   <input
                     type="email"
                     name="email"
@@ -364,7 +422,7 @@ function EmployeeManagement() {
 
                 {/* Contact Number */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Contact Number</label>
+                  <label className="block mb-1" style={modalLabelStyle}>Contact Number</label>
                   <input
                     type="tel"
                     name="contactNumber"
@@ -376,7 +434,7 @@ function EmployeeManagement() {
 
                 {/* Role/ Designation */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Role/ Designation</label>
+                  <label className="block mb-1" style={modalLabelStyle}>Role/ Designation</label>
                   <div className="relative">
                     <select
                       name="role"
@@ -400,7 +458,7 @@ function EmployeeManagement() {
 
                 {/* Access Role */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Access Role</label>
+                  <label className="block mb-1" style={modalLabelStyle}>Access Role</label>
                   <input
                     type="text"
                     name="accessRole"
@@ -412,7 +470,7 @@ function EmployeeManagement() {
 
                 {/* Year Group */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Year Group</label>
+                  <label className="block mb-1" style={modalLabelStyle}>Year Group</label>
                   <div className="relative">
                     <select
                       name="yearGroup"

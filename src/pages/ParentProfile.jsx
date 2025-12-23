@@ -237,8 +237,8 @@ function ParentProfile() {
                 <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">Queries</h2>
                   <div className="space-y-3">
-                    <div className="p-3 bg-gray-50 rounded-lg">
-                      <p className="text-sm text-gray-900 mb-2">I have a question about something in school</p>
+                    <div className="p-3 border-b">
+                      <p className="text-sm text-[#003049] mb-2">I have a question about something in school</p>
                       <div className="flex items-center justify-between">
                         <span className="text-xs text-gray-500">2024-06-22</span>
                         <button className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded">
@@ -246,8 +246,8 @@ function ParentProfile() {
                         </button>
                       </div>
                     </div>
-                    <div className="p-3 bg-gray-50 rounded-lg">
-                      <p className="text-sm text-gray-900 mb-2">I have a question about something in school</p>
+                    <div className="p-3 ">
+                      <p className="text-sm text-[#003049] mb-2">I have a question about something in school</p>
                       <div className="flex items-center justify-between">
                         <span className="text-xs text-gray-500">2024-06-22</span>
                         <button className="px-3 py-1 bg-gray-200 text-gray-600 text-xs font-medium rounded">
@@ -271,7 +271,7 @@ function ParentProfile() {
                       Add Note
                     </button>
                     <div className="pt-4 border-t border-gray-200">
-                      <div className="text-sm font-medium text-[#003049] mb-2">Intervention by Mr. Davis</div>
+                      <div className="text-md font-medium text-[#003049] mb-2">Intervention by Mr. Davis</div>
                       <p className="text-sm text-gray-600">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                       </p>
