@@ -222,7 +222,9 @@ function Reports() {
                         </section>
 
                         {/* Alerts Insights Section */}
-                        <section className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 mt-6">
+                        <section className="mt-6">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-6">Alerts Insights</h2>
+                            <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
                             {/* Left: Top Safeguarding Trends */}
                             <div className="bg-white rounded-lg p-6 shadow-xl">
                                 <h2 className="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">Top Safeguarding Trends</h2>
@@ -354,10 +356,13 @@ function Reports() {
                                     </div>
                                 </div>
                             </div>
+                            </div>
                         </section>
 
                         {/* Most Active Parent Demographic Section */}
-                        <section className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 mt-6">
+                        <section className="mt-6">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-6">Most Active Parent Demographic</h2>
+                            <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
                             {/* Left: Most Engaged Year Groups */}
                             <div className="bg-white rounded-lg p-6 shadow-xl">
                                 <h2 className="text-lg font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-4">Most Engaged Year Groups</h2>
@@ -484,6 +489,7 @@ function Reports() {
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                         </section>
 

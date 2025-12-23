@@ -5,6 +5,37 @@ import Header from '../components/Header'
 
 function Dashboard() {
   const [activeNav, setActiveNav] = useState('Overview')
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [alertFormData, setAlertFormData] = useState({
+    title: '',
+    audience: '',
+    status: 'Active'
+  })
+
+  const handleModalClose = () => {
+    setIsModalOpen(false)
+  }
+
+  const handleAlertInputChange = (e) => {
+    const { name, value } = e.target
+    setAlertFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleAddAlert = (e) => {
+    e.preventDefault()
+    // Handle alert submission
+    console.log('Alert added:', alertFormData)
+    setIsModalOpen(false)
+    // Reset form
+    setAlertFormData({
+      title: '',
+      audience: '',
+      status: 'Active'
+    })
+  }
 
   return (
     <div className="h-screen flex overflow-hidden bg-gray-50">
@@ -160,6 +191,7 @@ function Dashboard() {
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-semibold text-gray-900">Recently Sent Alerts</h2>
               <button 
+                onClick={() => setIsModalOpen(true)}
                 className="px-4 py-2 bg-[#173570] text-white rounded-lg text-sm font-medium hover:bg-[#1a3d7a] transition-colors flex items-center space-x-2"
                 style={{ borderRadius: '6px' }}
               >
@@ -533,6 +565,117 @@ function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* Add New Alert Modal */}
+      {isModalOpen && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={handleModalClose}
+          ></div>
+          
+          {/* Modal */}
+          <div className="fixed inset-0 z-50 flex justify-end">
+            <div className="bg-white shadow-xl w-full max-w-md h-full overflow-y-auto relative">
+              {/* Modal Header */}
+              <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                <button
+                  onClick={handleModalClose}
+                  className="absolute -left-10 w-8 h-8 rounded-full bg-white hover:bg-gray-100 flex items-center justify-center transition-colors shadow-md"
+                >
+                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                <h2 className="text-xl font-bold text-gray-900 flex-1 text-center">Add New Alert</h2>
+              </div>
+
+              {/* Modal Body */}
+              <form onSubmit={handleAddAlert} className="p-6 space-y-4">
+                {/* Alert Title */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Alert Title</label>
+                  <input
+                    type="text"
+                    name="title"
+                    value={alertFormData.title}
+                    onChange={handleAlertInputChange}
+                    placeholder="Enter alert title"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#173570] focus:border-transparent text-sm"
+                  />
+                </div>
+
+                {/* Audience */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Audience</label>
+                  <div className="relative">
+                    <select
+                      name="audience"
+                      value={alertFormData.audience}
+                      onChange={handleAlertInputChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#173570] focus:border-transparent appearance-none bg-white text-sm"
+                    >
+                      <option value="">Select Audience</option>
+                      <option value="All Parents">All Parents</option>
+                      <option value="Year 7 Parents">Year 7 Parents</option>
+                      <option value="Year 8 Parents">Year 8 Parents</option>
+                      <option value="Year 9 Parents">Year 9 Parents</option>
+                      <option value="Year 10 Parents">Year 10 Parents</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                      <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Status */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                  <div className="relative">
+                    <select
+                      name="status"
+                      value={alertFormData.status}
+                      onChange={handleAlertInputChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#173570] focus:border-transparent appearance-none bg-white text-sm"
+                    >
+                      <option value="Active">Active</option>
+                      <option value="Scheduled">Scheduled</option>
+                      <option value="Paused">Paused</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                      <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Alert Description */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                  <textarea
+                    name="description"
+                    rows="4"
+                    placeholder="Enter alert description"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#173570] focus:border-transparent text-sm resize-none"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="w-full px-4 py-2 bg-[#173570] text-white rounded-lg hover:bg-[#1a3d7a] transition-colors font-medium text-sm"
+                >
+                  Add Alert
+                </button>
+              </form>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   )
 }

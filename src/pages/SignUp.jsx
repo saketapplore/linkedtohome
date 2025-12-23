@@ -93,11 +93,22 @@ function SignUp() {
         <div className="flex-1 flex justify-center px-6 sm:px-8 md:px-12 lg:px-16 pb-4">
           <div className="w-full max-w-md">
             {/* Form Card */}
-            <div className="rounded-lg shadow-lg p-6" style={{ backgroundColor: '#fefefe' }}>
+            <div className="rounded-lg shadow-lg p-6" style={{ backgroundColor: '#fffdf9' }}>
             <form onSubmit={handleSubmit} className="space-y-3">
             {/* School Name */}
             <div>
-              <label htmlFor="schoolName" className="block text-sm font-medium text-gray-700 mb-1">
+              <label 
+                htmlFor="schoolName" 
+                className="block mb-1"
+                style={{
+                  color: 'var(--sds-color-text-default-default)',
+                  fontFamily: 'var(--sds-typography-body-font-family)',
+                  fontSize: 'var(--sds-typography-body-size-medium)',
+                  fontStyle: 'normal',
+                  fontWeight: 'var(--sds-typography-body-font-weight-regular)',
+                  lineHeight: '140%'
+                }}
+              >
                 School Name
               </label>
               <input
@@ -108,12 +119,31 @@ function SignUp() {
                 onChange={handleChange}
                 placeholder="Value"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                style={{
+                  color: 'var(--sds-color-text-default-default)',
+                  fontFamily: 'var(--sds-typography-body-font-family)',
+                  fontSize: 'var(--sds-typography-body-size-medium)',
+                  fontStyle: 'normal',
+                  fontWeight: 'var(--sds-typography-body-font-weight-regular)',
+                  lineHeight: '140%'
+                }}
               />
             </div>
 
             {/* Official School Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label 
+                htmlFor="email" 
+                className="block mb-1"
+                style={{
+                  color: 'var(--sds-color-text-default-default)',
+                  fontFamily: 'var(--sds-typography-body-font-family)',
+                  fontSize: 'var(--sds-typography-body-size-medium)',
+                  fontStyle: 'normal',
+                  fontWeight: 'var(--sds-typography-body-font-weight-regular)',
+                  lineHeight: '140%'
+                }}
+              >
                 Official School Email
               </label>
               <div className="relative">
@@ -125,6 +155,14 @@ function SignUp() {
                   onChange={handleChange}
                   placeholder="Value"
                   className="w-full px-4 py-2 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  style={{
+                    color: 'var(--sds-color-text-default-default)',
+                    fontFamily: 'var(--sds-typography-body-font-family)',
+                    fontSize: 'var(--sds-typography-body-size-medium)',
+                    fontStyle: 'normal',
+                    fontWeight: 'var(--sds-typography-body-font-weight-regular)',
+                    lineHeight: '140%'
+                  }}
                 />
                 <svg 
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
@@ -139,7 +177,18 @@ function SignUp() {
 
             {/* Create Password */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+              <label 
+                htmlFor="password" 
+                className="block mb-1"
+                style={{
+                  color: 'var(--sds-color-text-default-default)',
+                  fontFamily: 'var(--sds-typography-body-font-family)',
+                  fontSize: 'var(--sds-typography-body-size-medium)',
+                  fontStyle: 'normal',
+                  fontWeight: 'var(--sds-typography-body-font-weight-regular)',
+                  lineHeight: '140%'
+                }}
+              >
                 Create Password
               </label>
               <input
@@ -150,12 +199,31 @@ function SignUp() {
                 onChange={handleChange}
                 placeholder="************"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                style={{
+                  color: 'var(--sds-color-text-default-default)',
+                  fontFamily: 'var(--sds-typography-body-font-family)',
+                  fontSize: 'var(--sds-typography-body-size-medium)',
+                  fontStyle: 'normal',
+                  fontWeight: 'var(--sds-typography-body-font-weight-regular)',
+                  lineHeight: '140%'
+                }}
               />
             </div>
 
             {/* Confirm Password */}
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">
+              <label 
+                htmlFor="confirmPassword" 
+                className="block mb-1"
+                style={{
+                  color: 'var(--sds-color-text-default-default)',
+                  fontFamily: 'var(--sds-typography-body-font-family)',
+                  fontSize: 'var(--sds-typography-body-size-medium)',
+                  fontStyle: 'normal',
+                  fontWeight: 'var(--sds-typography-body-font-weight-regular)',
+                  lineHeight: '140%'
+                }}
+              >
                 Confirm Password
               </label>
               <input
@@ -166,6 +234,14 @@ function SignUp() {
                 onChange={handleChange}
                 placeholder="************"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                style={{
+                  color: 'var(--sds-color-text-default-default)',
+                  fontFamily: 'var(--sds-typography-body-font-family)',
+                  fontSize: 'var(--sds-typography-body-size-medium)',
+                  fontStyle: 'normal',
+                  fontWeight: 'var(--sds-typography-body-font-weight-regular)',
+                  lineHeight: '140%'
+                }}
               />
             </div>
 
@@ -198,9 +274,9 @@ function SignUp() {
 
             {/* Login Link */}
             <div className="text-center mt-2">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-[#173570]">
                 Already have an account?{' '}
-                <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
+                <a href="#" className="text-[#173570] hover:text-blue-700 font-bold">
                   Log In
                 </a>
               </p>

@@ -40,6 +40,15 @@ function LetsStartup() {
     document.getElementById('logoUpload').click()
   }
 
+  const labelStyle = {
+    color: 'var(--sds-color-text-default-default)',
+    fontFamily: 'var(--sds-typography-body-font-family)',
+    fontSize: 'var(--sds-typography-body-size-medium)',
+    fontStyle: 'normal',
+    fontWeight: 'var(--sds-typography-body-font-weight-regular)',
+    lineHeight: '140%'
+  }
+
   return (
     <div className="h-screen flex overflow-hidden bg-gray-50">
       {/* Left Section - Image */}
@@ -104,7 +113,11 @@ function LetsStartup() {
             <form onSubmit={handleSubmit} className="space-y-2">
               {/* School Name */}
               <div>
-                <label htmlFor="schoolName" className="block text-sm font-medium text-gray-700 mb-1">
+              <label
+                htmlFor="schoolName"
+                className="block text-sm font-medium text-gray-700 mb-1"
+                style={labelStyle}
+              >
                   School Name
                 </label>
                 <input
@@ -119,7 +132,11 @@ function LetsStartup() {
 
               {/* Official School Email */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-0.5">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-0.5"
+                  style={labelStyle}
+                >
                   Official School Email
                 </label>
                 <div className="relative">
@@ -144,7 +161,11 @@ function LetsStartup() {
 
               {/* Phone Number */}
               <div>
-                <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-0.5">
+                <label
+                  htmlFor="phoneNumber"
+                  className="block text-sm font-medium text-gray-700 mb-0.5"
+                  style={labelStyle}
+                >
                   Phone Number
                 </label>
                 <input
@@ -160,7 +181,11 @@ function LetsStartup() {
 
               {/* Address */}
               <div>
-                <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-0.5">
+                <label
+                  htmlFor="address"
+                  className="block text-sm font-medium text-gray-700 mb-0.5"
+                  style={labelStyle}
+                >
                   Address
                 </label>
                 <input
@@ -176,7 +201,11 @@ function LetsStartup() {
 
               {/* City / Country */}
               <div>
-                <label htmlFor="cityCountry" className="block text-sm font-medium text-gray-700 mb-0.5">
+                <label
+                  htmlFor="cityCountry"
+                  className="block text-sm font-medium text-gray-700 mb-0.5"
+                  style={labelStyle}
+                >
                   City / Country
                 </label>
                 <div className="relative">
@@ -205,7 +234,11 @@ function LetsStartup() {
 
               {/* School Type */}
               <div>
-                <label htmlFor="schoolType" className="block text-sm font-medium text-gray-700 mb-0.5">
+                <label
+                  htmlFor="schoolType"
+                  className="block text-sm font-medium text-gray-700 mb-0.5"
+                  style={labelStyle}
+                >
                   School Type
                 </label>
                 <div className="relative">
@@ -234,7 +267,10 @@ function LetsStartup() {
 
               {/* Upload Logo */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-0.5">
+                <label
+                  className="block text-sm font-medium text-gray-700 mb-0.5"
+                  style={labelStyle}
+                >
                   Upload Logo
                 </label>
                 <div
@@ -269,16 +305,18 @@ function LetsStartup() {
               </div>
 
               {/* Save & Continue Button */}
-              <button
-                type="submit"
-                className="w-full text-white font-semibold py-2 px-4 transition-colors duration-200"
-                style={{
-                  borderRadius: '6px',
-                  backgroundColor: '#173570'
-                }}
-              >
-                Save & Continue
-              </button>
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  className="w-[300px] text-white font-semibold py-2 px-4 transition-colors duration-200"
+                  style={{
+                    borderRadius: '6px',
+                    backgroundColor: '#173570'
+                  }}
+                >
+                  Save & Continue
+                </button>
+              </div>
             </form>
             </div>
           </div>

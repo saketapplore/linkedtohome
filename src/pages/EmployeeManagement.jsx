@@ -330,9 +330,9 @@ function EmployeeManagement() {
               </button>
 
               {/* Modal Header */}
-              <div className="flex items-center justify-between p-6">
+              <div className=" p-6">
                 <div className="w-8"></div> {/* Spacer for centering */}
-                <h2 className="text-xl font-bold text-gray-900">Add New Employee</h2>
+                <h2 className="text-xl font-bold text-[#003049]">Add New Employee</h2>
                 <div className="w-8"></div> {/* Spacer for centering */}
               </div>
 
@@ -439,7 +439,7 @@ function EmployeeManagement() {
                 <div>
                   <button
                     type="button"
-                    className="text-[#173570] hover:text-[#1a3d7a] font-medium text-sm"
+                    className="text-[#173570] ml-72 hover:text-[#1a3d7a] font-medium text-sm"
                   >
                     +Add Child
                   </button>
@@ -448,7 +448,7 @@ function EmployeeManagement() {
                 {/* Add Parent Button */}
                 <button
                   type="submit"
-                  className="w-full px-4 py-2 bg-[#173570] text-white rounded-lg hover:bg-[#1a3d7a] transition-colors font-medium text-sm"
+                  className="w-[180px] mt-12 px-4 py-2 bg-[#173570] text-white rounded-lg hover:bg-[#1a3d7a] transition-colors font-medium text-sm"
                 >
                   Add Parent
                 </button>

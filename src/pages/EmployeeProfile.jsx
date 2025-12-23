@@ -26,7 +26,7 @@ function EmployeeProfile() {
   }
 
   const recentActivityData = [
-    { timestamp: '2025-10-10 10:30 pm', action: 'Logged In', module: 'System', description: 'Limited (Class-leve' },
+    { timestamp: '2025-10-10 10:30 pm', action: 'Logged In', module: 'System', description: 'Limited (Class-level' },
     { timestamp: '2025-10-10 10:30 pm', action: 'Logged In', module: 'Parents', description: 'Full' },
     { timestamp: '2025-10-10 10:30 pm', action: 'Logged In', module: 'Students', description: 'Full' },
     { timestamp: '2025-10-10 10:30 pm', action: 'Logged In', module: 'Students', description: 'Full' },
@@ -72,7 +72,7 @@ function EmployeeProfile() {
                   <span className="text-sm font-medium">Edit</span>
                 </button>
                 {/* Suspend Account Button */}
-                <button className="flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 text-red-600 rounded-lg hover:bg-red-100 transition-colors">
+                <button className="flex items-center gap-2 px-4 py-2 border border-red-200 text-red-600 rounded-lg hover:bg-red-100 transition-colors">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                   </svg>
@@ -119,7 +119,7 @@ function EmployeeProfile() {
 
                 {/* Add Admin notes Card */}
                 <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                  <h2 className="text-lg font-semibold text-white mb-4" style={{ backgroundColor: '#173570', padding: '8px 12px', borderRadius: '4px', display: 'inline-block' }}>Add Admin notes</h2>
+                  <h2 className="text-lg font-semibold text-black mb-4" style={{padding: '8px 12px', borderRadius: '4px', display: 'inline-block' }}>Add Admin notes</h2>
                   <form onSubmit={handleAddNote} className="mt-4">
                     <textarea
                       value={adminNotes}
@@ -130,7 +130,7 @@ function EmployeeProfile() {
                     />
                     <button
                       type="submit"
-                      className="w-full px-4 py-2 bg-[#173570] text-white rounded-lg hover:bg-[#1a3d7a] transition-colors font-medium text-sm"
+                      className="w-[150px] px-4 py-2 bg-[#173570] text-white rounded-lg hover:bg-[#1a3d7a] transition-colors font-medium text-sm"
                     >
                       Add Note
                     </button>

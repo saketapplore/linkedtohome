@@ -63,14 +63,15 @@ function ForgotPassword() {
         {/* Form Card - Centered with max-width */}
         <div className="flex-1 flex justify-center px-6 sm:px-8 md:px-12 lg:px-16 pb-4">
           <div className="w-full max-w-md">
-          <h1 
+            <h1 
               className="mb-2"
               style={{
                 color: '#000',
-                fontFamily: 'Lato',
-                fontSize: '24px',
+                fontFamily: 'Open Sans',
+                fontFeatureSettings: "'liga' off, 'clig' off",
+                fontSize: '22px',
                 fontStyle: 'normal',
-                fontWeight: 700,
+                fontWeight: 600,
                 lineHeight: '30px'
               }}
             >
@@ -91,13 +92,13 @@ function ForgotPassword() {
               Please enter the email address you'd like your password reset information sent to
             </p>
             {/* Form Card */}
-            <div className="rounded-lg shadow-lg p-6" style={{ backgroundColor: '#fefefe' }}>
+            <div className="rounded pt-6" style={{ backgroundColor: '#fefefe' }}>
             <form onSubmit={handleSubmit} className="space-y-4">
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              {/* <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                 Email
-              </label>
+              </label> */}
               <div className="relative">
                 <input
                   type="email"
@@ -105,7 +106,7 @@ function ForgotPassword() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Enter your email"
+                  placeholder="Email"
                   className="w-full px-4 py-2 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
                 <svg 
@@ -136,7 +137,7 @@ function ForgotPassword() {
               <a 
                 href="#" 
                 onClick={(e) => { e.preventDefault(); navigate('/login') }} 
-                className="text-sm text-blue-600 hover:text-blue-700 font-medium"
+                className="text-sm text-[#173570] hover:text-blue-700 font-medium"
               >
                 Back to Login
               </a>
@@ -151,4 +152,7 @@ function ForgotPassword() {
 }
 
 export default ForgotPassword
+
+
+
 

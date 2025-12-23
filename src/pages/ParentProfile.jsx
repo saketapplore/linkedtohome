@@ -44,7 +44,7 @@ function ParentProfile() {
                   </svg>
                   Edit
                 </button>
-                <button className="px-4 py-2 bg-red-50 border border-red-300 rounded-lg hover:bg-red-100 flex items-center gap-2 text-sm font-medium text-red-600">
+                <button className="px-4 py-2 border border-red-300 rounded-lg hover:bg-red-100 flex items-center gap-2 text-sm font-medium text-red-600">
                   <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                   </svg>
@@ -267,11 +267,11 @@ function ParentProfile() {
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#173570] focus:border-transparent text-sm resize-none"
                       rows="4"
                     ></textarea>
-                    <button className="w-full bg-[#173570] text-white py-2 px-4 rounded-lg hover:bg-[#1a3d7a] transition-colors font-medium text-sm">
+                    <button className="w-[100px] bg-[#173570] text-white py-2 px-4 rounded-lg hover:bg-[#1a3d7a] transition-colors font-medium text-sm">
                       Add Note
                     </button>
                     <div className="pt-4 border-t border-gray-200">
-                      <div className="text-sm font-medium text-gray-900 mb-2">Intervention by Mr. Davis</div>
+                      <div className="text-sm font-medium text-[#003049] mb-2">Intervention by Mr. Davis</div>
                       <p className="text-sm text-gray-600">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                       </p>

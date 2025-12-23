@@ -128,9 +128,9 @@ function ParentQueries() {
       case 'New':
         return { backgroundColor: '#4FC3F7', color: '#fff' }
       case 'In progress':
-        return { backgroundColor: '#FF9800', color: '#fff' }
+        return { backgroundColor: '#FFAB91', color: '#000' }
       case 'Resolved':
-        return { backgroundColor: '#4CAF50', color: '#fff' }
+        return { backgroundColor: '#54c3c6', color: '#fff' }
       case 'Sent':
         return { backgroundColor: '#FFAB91', color: '#000' }
       default:
@@ -169,7 +169,7 @@ function ParentQueries() {
                 <input
                   type="text"
                   placeholder="Search by name"
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-[300px] pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
 
@@ -343,8 +343,8 @@ function ParentQueries() {
                             }}
                             className="p-1 hover:bg-gray-100 rounded"
                           >
-                            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                            <svg className="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M6 10a2 2 0 110-4 2 2 0 010 4zM12 10a2 2 0 110-4 2 2 0 010 4zM18 10a2 2 0 110-4 2 2 0 010 4z" />
                             </svg>
                           </button>
                         </td>
@@ -449,7 +449,7 @@ function ParentQueries() {
                 {/* Send Reply Button */}
                 <button
                   type="button"
-                  className="w-full px-4 py-2 bg-[#173570] text-white rounded-lg hover:bg-[#1a3d7a] transition-colors font-medium text-sm"
+                  className="w-[150px] ml-60 px-4 py-2 bg-[#173570] text-white rounded-lg hover:bg-[#1a3d7a] transition-colors font-medium text-sm"
                 >
                   Send Reply
                 </button>
