@@ -459,8 +459,11 @@ function SafeguardingAlerts() {
           ></div>
           
           {/* Modal */}
-          <div className="fixed inset-0 z-50 flex justify-end">
-            <div className="bg-white shadow-xl w-full max-w-md h-full overflow-y-auto relative">
+          <div className="fixed inset-0 z-50 flex justify-end" onClick={handleModalClose}>
+            <div
+              className="bg-white shadow-xl w-full max-w-md h-full overflow-y-auto relative"
+              onClick={(e) => e.stopPropagation()}
+            >
               {/* Modal Header */}
               <div className="flex items-center justify-between p-6">
                 <button

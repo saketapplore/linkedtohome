@@ -377,8 +377,11 @@ function ParentQueries() {
           ></div>
           
           {/* Modal */}
-          <div className="fixed inset-0 z-50 flex justify-end">
-            <div className="bg-white shadow-xl w-full max-w-md h-full overflow-y-auto relative">
+          <div className="fixed inset-0 z-50 flex justify-end" onClick={handleDone}>
+            <div
+              className="bg-white shadow-xl w-full max-w-md h-full overflow-y-auto relative"
+              onClick={(e) => e.stopPropagation()}
+            >
               {/* Close Button - Outside form container */}
               <button
                 onClick={handleDone}
